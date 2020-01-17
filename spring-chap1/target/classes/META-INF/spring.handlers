@@ -1,0 +1,6 @@
+#自定义标签
+#http\://hresh.com/schema/soa=com.msdn.schema.MyNamespaceHandler
+#自定义属性
+#http\://hresh.com/schema/user=com.msdn.schema.MyNamespaceHandler
+#自定义子标签
+http\://hresh.com/schema/descTag=com.msdn.schema.MyNamespaceHandler

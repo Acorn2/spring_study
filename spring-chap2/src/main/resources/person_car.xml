@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="person" class="com.msdn.bean.Person" >
+        <property name="name" value="hresh" />
+        <property name="car" value="东风,299,5400,银色" />
+        <property name="desc" value="xxxxx" />
+    </bean>
+
+
+    <bean id="editorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="com.msdn.bean.Car" value="com.msdn.editor.CustomCarEditor" />
+            </map>
+        </property>
+        <!--<property name="propertyEditorRegistrars">
+            <list>
+                <bean class="com.msdn.editor.DateFormatEditor">
+                    <property name="dateFormat" value="yyyy年MM月dd日" />
+                </bean>
+            </list>
+        </property>-->
+    </bean>
+
+</beans>

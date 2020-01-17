@@ -1,0 +1,6 @@
+#自定义标签
+#http\://hresh.com/schema/soa.xsd=META-INF/soa.xsd
+#自定义属性
+#http\://hresh.com/schema/user.xsd=META-INF/user-desc.xsd
+#自定义子标签
+http\://hresh.com/schema/descTag.xsd=META-INF/descTag.xsd

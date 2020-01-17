@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.msdn.bean.Car">
+        <property name="maxSpeed" value="120" />
+        <property name="brand" value="BMW" />
+        <property name="price" value="2500.5" />
+    </bean>
+
+    <bean id="carFactoryBean"  class="com.msdn.bean.CarFactoryBean" p:carInfo="BMW,234,45000" depends-on="car"/>
+    <!--<alias name="carFactoryBean" alias="carFactoryBean2" />-->
+
+
+    <bean id="carFactoryBean3"  class="com.msdn.bean.CarFactoryBean" p:carInfo="BMW,234,45000" depends-on="carFactoryBean"/>
+    <!--<bean id="mysqlImpl" class="com.msdn.dao.UserDaoMysqlImpl" />
+    <bean id="oracleImpl" class="com.msdn.dao.UserDaoOracleImpl" />
+
+    <bean id="serviceImpl" class="com.msdn.service.UserServiceImpl">
+        <property name="userDao" ref="oracleImpl" />
+    </bean>-->
+
+</beans>

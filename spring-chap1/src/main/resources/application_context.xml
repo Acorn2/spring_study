@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:myTag="http://hresh.com/schema/descTag"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://hresh.com/schema/descTag http://hresh.com/schema/descTag.xsd">
+
+    <!--<bean id="userHandler" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:bean.properties</value>
+            </list>
+        </property>
+    </bean>-->
+    <!--<bean id="myPost" class="com.msdn.processor.MyBeanFactoryPostProcessor"></bean>-->
+    <!--<bean id="myUser" class="com.msdn.processor.UserFactoryPostProcessor"></bean>-->
+
+    <!--<hero:xxx id="user" name="clearLove" />-->
+
+    <bean id="user" class="com.msdn.bean.User">
+        <constructor-arg name="name" value="hresh" />
+        <!--<property name="name" value="hresh" />-->
+        <myTag:node name="desc" value="a good boy" />
+        <!--<property name="name" value="${user.name}" />-->
+    </bean>
+    <!--<alias name="user" alias="user2"/>-->
+    <!--<bean id="mysqlImpl" class="com.msdn.dao.UserDaoMysqlImpl" />
+    <bean id="oracleImpl" class="com.msdn.dao.UserDaoOracleImpl" />
+
+    <bean id="serviceImpl" class="com.msdn.service.UserServiceImpl">
+        <property name="userDao" ref="oracleImpl" />
+    </bean>-->
+
+
+    <!--<bean id="personPostProcessor" class="com.msdn.processor.PersonPostProcessor" />
+    <bean id="personFactoryPostProcessor" class="com.msdn.processor.PersonFactoryPostProcessor" />
+    <bean id="person" class="com.msdn.bean.Person" init-method="init">
+        <property name="name" value="hresh" />
+        <property name="age" value="18" />
+    </bean>-->
+
+</beans>

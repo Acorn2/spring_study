@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="abstractCar" class="com.msdn.bean.AbstractCar"  p:maxSpeed="240"  p:price="56000" abstract="true"/>-->
+
+    <bean id="car1" class="com.msdn.bean.Car" p:maxSpeed="240" p:price="5600" p:brand="宝马" p:color="红色" />
+    <!--<bean id="car2" class="com.msdn.bean.Car" p:color="银色" parent="car1"/>-->
+
+    <bean id="stringBean" class="com.msdn.bean.StringBean" />
+    <bean id="person" class="com.msdn.bean.Person" p:name="herish" depends-on="car1" />
+    <bean id="person2" class="com.msdn.bean.Person" >
+        <property name="name" value="hresh" />
+        <property name="car">
+            <idref bean="car1" />
+        </property>
+        <property name="desc">
+            <idref bean="stringBean" />
+        </property>
+    </bean>
+
+</beans>

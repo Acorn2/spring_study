@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="boy" class="com.msdn.bean.Boy">
+        <property name="name" value="hresh" />
+        <property name="birthday" value="1996年1月1日" />
+    </bean>
+
+    <!--<bean id="dateEditor" class="com.msdn.editor.DateEditor">
+        <property name="dateFormat" value="yyyy-MM-dd" />
+    </bean>-->
+
+    <!--<bean id="dateEditor2" class="com.msdn.editor.DateEditor2">
+        <property name="dateList" >
+            <list>
+                <bean class="java.text.SimpleDateFormat">
+                    <constructor-arg value="yyyy年MM月dd日" />
+                </bean>
+            </list>
+        </property>
+    </bean>-->
+    <!--<bean id="dateEditor3" class="com.msdn.editor.DateEditor3">
+        <property name="format" value="yyyy年MM月dd日" />
+    </bean>-->
+
+    <!--<bean id="dFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="yyyy年MM月dd日" />
+    </bean>-->
+
+
+
+    <bean id="editorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <!--<property name="customEditors">
+            <map>
+                &lt;!&ndash;<entry key="java.util.Date" value-ref="dateEditor3" />&ndash;&gt;
+                &lt;!&ndash;<entry key="java.util.Date" value-ref="dateEditor3" />&ndash;&gt;
+                <entry key="java.util.Date">
+                    <bean class="com.msdn.editor.DateEditor3">
+                        <property name="format" value="yyyy年MM月dd日" />
+                    </bean>
+                </entry>
+            </map>
+        </property>-->
+        <property name="propertyEditorRegistrars">
+            <list>
+                <bean class="com.msdn.editor.DateFormatEditor">
+                    <property name="dateFormat" value="yyyy年MM月dd日" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>
